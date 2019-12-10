@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/junyoung/cs_study/git/2048-Project/mainfeatures.c
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+./mainfeatures.h
+/home/junyoung/cs_study/git/2048-Project/mainfeatures.h
+
+/home/junyoung/cs_study/git/2048-Project/mainfeatures.h
+stdbool.h
+-
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+
