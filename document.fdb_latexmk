@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1575992493 "/home/junyoung/cs_study/git/2048-Project/document.tex" "/home/junyoung/cs_study/git/2048-Project/document.pdf" "document" 1575992493
+["pdflatex"] 1575993277 "/home/junyoung/cs_study/git/2048-Project/document.tex" "/home/junyoung/cs_study/git/2048-Project/document.pdf" "document" 1575993277
   "/etc/texmf/web2c/texmf.cnf" 1575462516 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/junyoung/cs_study/git/2048-Project/document.aux" 1575992493 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/home/junyoung/cs_study/git/2048-Project/document.tex" 1575992492 468 578f6bb43566f5d4d3a3f49008af2c47 ""
+  "/home/junyoung/cs_study/git/2048-Project/document.aux" 1575993277 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/junyoung/cs_study/git/2048-Project/document.tex" 1575993277 600 071ee16136938f2ddb103ab2184f2d19 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -63,13 +63,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1562720991 35073 2a40cfca74fcd5e2568b569ccaadf3f1 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1575462565 4549418 4593509275c90822931a1b14bc17851e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1575462577 4262656 cacc7f311a0ac700af1aaf4bf84603d7 ""
-  "document.aux" 1575992493 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "document.tex" 1575992492 468 578f6bb43566f5d4d3a3f49008af2c47 ""
-  "document.toc" 1575992493 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "document.aux" 1575993277 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "document.tex" 1575993277 600 071ee16136938f2ddb103ab2184f2d19 ""
+  "document.toc" 1575993277 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
+  "document.pdf"
   "/home/junyoung/cs_study/git/2048-Project/document.log"
+  "document.log"
   "document.aux"
   "document.toc"
   "/home/junyoung/cs_study/git/2048-Project/document.pdf"
-  "document.pdf"
-  "document.log"
