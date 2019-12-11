@@ -6,7 +6,7 @@
 #define SIZE 4
 extern bool wincounter;
 extern bool status;
-extern int score, zeros;
+extern int score, zeros, moveable;
 extern int numbers[SIZE][SIZE];
 void draw(int score)
 {
@@ -14,7 +14,7 @@ void draw(int score)
     {
         printf("-------------------------\n");
         printf("|     |     |     |     |\n");
-        printf("| %4d| %4d| %4d| %4d|\n", numbers[i][0], numbers[i][1], numbers[i][2], numbers[i][3]);
+        printf("|%5d|%5d|%5d|%5d|\n", numbers[i][0], numbers[i][1], numbers[i][2], numbers[i][3]);
         printf("|     |     |     |     |\n");
     }
     printf("-------------------------");
@@ -32,7 +32,11 @@ void number(void)
         else
             y++;
     }
-    numbers[x][y] = 2;
+    int z = rand() % 10;
+    if (z == 0)
+        numbers[x][y] = 4;
+    else
+        numbers[x][y] = 2;
     zeros--;
 }
 void rotate_left(void)
@@ -48,17 +52,16 @@ void rotate_left(void)
 int move_left(int arr[SIZE][SIZE])
 {
     int scoreadded = 0;
-    /* move without merge code */
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j)
             for (int k = 0; k < j; ++k)
-                if (arr[i][k] == 0)
+                if (arr[i][k] == 0 && arr[i][j] > 0)
                 {
                     int temp = arr[i][k];
                     arr[i][k] = arr[i][j];
                     arr[i][j] = temp;
+                    moveable++;
                 }
-    /* Merge code */
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE - 1; ++j)
             if (arr[i][j] == arr[i][j + 1])
@@ -73,11 +76,12 @@ int move_left(int arr[SIZE][SIZE])
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j)
             for (int k = 0; k < j; ++k)
-                if (arr[i][k] == 0)
+                if (arr[i][k] == 0 && arr[i][j] > 0)
                 {
                     int temp = arr[i][k];
                     arr[i][k] = arr[i][j];
                     arr[i][j] = temp;
+                    moveable++;
                 }
     return scoreadded;
 }
