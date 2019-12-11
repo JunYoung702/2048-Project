@@ -1,6 +1,5 @@
 #include "./lib-cross.h"
 #include "./mainfeatures.h"
-#include "./subfeatures.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,15 +7,15 @@
 #define SIZE 4
 bool wincounter = false;
 bool status = false;
-int losecounter, stacksize;
-int score, zeros, moveable;
-typedef struct tiles
+int losecounter;
+int numbers[SIZE][SIZE];
+int score;
+int zeros;
+typedef struct _2048tiles
 {
-    int tile[SIZE][SIZE];
-    struct tiles *next;
-} tiles;
-tiles numbers;
-tiles *bottom, *top;
+    int tiles[SIZE][SIZE];
+    struct _2048tiles *next;
+} tile;
 int main(void)
 {
     hide_cursor();
@@ -56,18 +55,11 @@ int main(void)
             screen_clear();
             score += move_right(numbers);
             break;
-        case 'u':
-            undo();
-            break;
-        
-        case 'r':
-            if (undocounter > 0)
-                redo();
-            break;
+
         default:
             break;
         }
-        if (zeros > 0 && moveable > 0)
+        if (zeros > 0)
             number();
         draw(score);
         if (wincounter == true && status == false)
@@ -96,8 +88,7 @@ int main(void)
             losecounter += move_up(temp);
             if (!losecounter)
             {
-                screen_clear();
-				puts("You Lose!");
+                printf("You Lose!");
                 break;
             }
         }
