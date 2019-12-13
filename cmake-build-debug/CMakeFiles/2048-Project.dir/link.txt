@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/2048-Project.dir/2048main.c.o CMakeFiles/2048-Project.dir/lib-cross.c.o CMakeFiles/2048-Project.dir/mainfeatures.c.o  -o 2048-Project 

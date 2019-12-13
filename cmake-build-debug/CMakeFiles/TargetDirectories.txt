@@ -1,3 +1,0 @@
-/home/junyoung/cs_study/git/2048-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/junyoung/cs_study/git/2048-Project/cmake-build-debug/CMakeFiles/2048-Project.dir
-/home/junyoung/cs_study/git/2048-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
