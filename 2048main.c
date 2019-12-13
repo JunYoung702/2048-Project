@@ -8,28 +8,24 @@
 bool wincounter = false;
 bool status = false;
 int losecounter;
+int moveable;
 int numbers[SIZE][SIZE];
 int score;
 int zeros;
-typedef struct _2048tiles
-{
-    int tiles[SIZE][SIZE];
-    struct _2048tiles *next;
-} tile;
 int main(void)
 {
     hide_cursor();
     char command;
     // get input
-    for (int i = 0; i < SIZE; ++i)
-        scanf("%d %d %d %d", &numbers[i][0], &numbers[i][1], &numbers[i][2], &numbers[i][3]);
-    for (int i = 0; i < SIZE; ++i)
-        for (int j = 0; j < SIZE; ++j)
-            if (numbers[i][j] == 0)
-                zeros++;
+	srand(time(NULL));
+	int count = (rand() % 4) + 5;
+	for (int i = 0; i < count; ++i) 
+		number();
+	zeros = 16 - count;
     draw(score);
     while ((command = getch()) != EOF)
     {
+		moveable = 0;
         if (command == ' ' || command == '\n')
             continue;
         if (command == EOF)
@@ -59,7 +55,7 @@ int main(void)
         default:
             break;
         }
-        if (zeros > 0)
+        if (zeros > 0 && moveable > 0)
             number();
         draw(score);
         if (wincounter == true && status == false)
