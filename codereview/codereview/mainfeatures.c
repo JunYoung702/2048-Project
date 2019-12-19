@@ -4,9 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 #define SIZE 4
-extern bool wincounter;
+extern bool bwinChecker;
 extern bool status;
-extern int moveable;
 extern int score, zeros;
 extern int numbers[SIZE][SIZE];
 
@@ -23,7 +22,7 @@ void Draw(int score)
 	printf("\nScore: %d\n", score);
 }
 
-void number(void)
+void SetNum(void)
 {
 	srand(time(NULL));
 	int x = rand() % SIZE;
@@ -70,7 +69,6 @@ int move_left(int arr[SIZE][SIZE])
 					int temp = arr[i][k];
 					arr[i][k] = arr[i][j];
 					arr[i][j] = temp;
-					moveable++;
 				}
 			}
 		}
@@ -84,10 +82,9 @@ int move_left(int arr[SIZE][SIZE])
 					arr[i][j + 1] = 0;
 					scoreAdded += arr[i][j];
 					++zeros;
-					++moveable;
 					if (arr[i][j] == 2048)
 					{
-						wincounter = true;
+						bwinChecker = true;
 					}
 				}
 			}
@@ -101,7 +98,6 @@ int move_left(int arr[SIZE][SIZE])
 					int temp = arr[i][k];
 					arr[i][k] = arr[i][j];
 					arr[i][j] = temp;
-					moveable++;
 				}
 			}
 		}

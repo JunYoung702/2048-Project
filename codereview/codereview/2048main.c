@@ -8,20 +8,11 @@
 #include <time.h>
 #define SIZE 4
 
-//조건 만족시 승리 true
-bool wincounter = false;
-
-bool status = false;
-
-
-
-int moveable;
-
+// true
+bool bwinChecker = false;
 int numbers[SIZE][SIZE];
-//점수
 int score;
-//0인 빈 갯수
-int zeros;
+int zeroNum;
 
 bool LoseCheck()
 {
@@ -38,12 +29,10 @@ bool LoseCheck()
 				return false;
 			}
 		}
-		//끝에서 밑으로 겹치는지 체크
 		if (numbers[i][3] == numbers[i+1][3])
 		{
 			return false;
 		}
-		//끝에서 옆으로 겹치는지 체크
 		if (numbers[3][i] == numbers[3][i + 1])
 		{
 			return false;
@@ -55,28 +44,24 @@ bool LoseCheck()
 int main(void)
 {
 	//Initialize
-	system("mode con: cols=30 lines=20"); //#include <stdlib.h> 화면크기조정
-	//콘솔 커서 숨김
+	
+	//consol set height width
+	system("mode con: cols=30 lines=20"); //#include <stdlib.h>
 	hide_cursor();
-
-	char command = -1;
-	// get input
 	srand(time(NULL));
 
-
-	//숫자 배치
 	const int count = (rand() % 4) + 5;
 	for (int i = 0; i < count; ++i)
 	{
-		number();
+		SetNum();
 	}
 	zeros = 16 - count;
 	Draw(score);
 
 	//Input 
+	char command = -1;
 	while ((command = getch()) != EOF)
 	{
-		moveable = 0;
 		switch (command)
 		{
 		case 'a':
@@ -103,17 +88,16 @@ int main(void)
 			break;//not using
 		}
 
-		if (zeros > 0 && moveable > 0)
+		if (zeros > 0)
 		{
-			number();
+			SetNum();
 		}
 
 		Draw(score);
 
-		if (wincounter == true && status == false)
+		if (bwinChecker == true)
 		{
 			printf("You Win!");
-			status == true;
 		}
 
 		if (zeros == 0 && LoseCheck()) // Test losing condition
